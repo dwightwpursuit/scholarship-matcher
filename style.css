@@ -1,0 +1,54 @@
+/* Apply a clean, modern font to the whole page */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin-top: 40px;
+  }
+  
+  /* Create a centered container for our content */
+  .container {
+    max-width: 600px;
+    margin: 0 auto; /* This centers the container */
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  h1 {
+    color: #005a9c;
+  }
+  
+  /* Style the text input field */
+  #major-input {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+  }
+  
+  /* Style the button */
+  #find-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Changes the mouse to a pointer on hover */
+  }
+  
+  /* Add a hover effect to the button */
+  #find-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* This is where the results will appear, we'll add some spacing */
+  #results-container {
+    margin-top: 30px;
+    text-align: left; /* Align the results text to the left */
+  }
