@@ -1,54 +1,172 @@
 /* Apply a clean, modern font to the whole page */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
-    margin-top: 40px;
-  }
-  
-  /* Create a centered container for our content */
-  .container {
-    max-width: 600px;
-    margin: 0 auto; /* This centers the container */
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  h1 {
-    color: #005a9c;
-  }
-  
-  /* Style the text input field */
-  #major-input {
-    width: 80%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 15px;
-  }
-  
-  /* Style the button */
-  #find-button {
-    padding: 12px 24px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer; /* Changes the mouse to a pointer on hover */
-  }
-  
-  /* Add a hover effect to the button */
-  #find-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* This is where the results will appear, we'll add some spacing */
-  #results-container {
-    margin-top: 30px;
-    text-align: left; /* Align the results text to the left */
-  }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin-top: 40px;
+}
+
+/* Create a centered container for our content */
+.container {
+  max-width: 600px;
+  margin: 0 auto; /* This centers the container */
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #005a9c;
+}
+
+/* Style the text input field */
+#major-input {
+  width: 80%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.clear-button {
+  background: #ccc; /* Light grey background */
+  color: #555;     /* Darker grey text */
+  border: none;    /* No border */
+  border-radius: 50%; /* Makes it a circle */
+  width: 25px;
+  height: 25px;
+  font-size: 0.8em;
+  cursor: pointer;
+  position: relative;
+  left: -35px; /* Adjust as needed to position inside the input */
+  top: 2px; /* Fine-tune vertical alignment */
+  outline: none; /* Remove outline on focus */
+}
+
+.clear-button:hover {
+  background: #bbb;
+}
+
+/* Style the button */
+#find-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* Changes the mouse to a pointer on hover */
+}
+
+/* Add a hover effect to the button */
+#find-button:hover {
+  background-color: #0056b3;
+}
+
+/* This is where the results will appear, we'll add some spacing */
+#results-container {
+  margin-top: 30px;
+  text-align: left; /* Align the results text to the left */
+}
+
+/* --- ADD THE NEW STYLES BELOW THIS LINE --- */
+
+/* This is the main container for each clickable card */
+.scholarship-card {
+  display: block; /* Makes the whole area of the link clickable */
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  text-decoration: none; /* Removes the default underline from the link */
+  color: inherit; /* Makes the text color normal */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.2s ease-in-out; /* Adds a smooth transition effect */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Add a hover effect to make the cards feel interactive */
+.scholarship-card:hover {
+  transform: translateY(-5px); /* Lifts the card up slightly */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Style the main title of the scholarship */
+.scholarship-card h4 {
+  margin: 0 0 5px 0;
+  color: #007bff;
+}
+
+/* Style the tag for the major */
+.scholarship-card .major-tag {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+  background-color: #e9ecef;
+  padding: 3px 8px;
+  border-radius: 5px;
+  display: inline-block; /* Makes the background color fit the text */
+}
+
+/* Style for the award amount */
+.scholarship-card .amount {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #28a745;
+  white-space: nowrap; /* Prevents the amount from wrapping to a new line */
+  padding-left: 20px;
+}
+
+/* Autocomplete styles */
+.autocomplete-items {
+  position: relative;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the input:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: #007bff !important;
+  color: #ffffff;
+}
+
+/* Loading spinner styles */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #007bff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  display: none; /* Hidden by default */
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
